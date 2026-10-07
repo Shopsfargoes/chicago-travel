@@ -1,0 +1,9 @@
+{
+  "name": "Chicago Travel Co.",
+  "tagline": "From Chicago to Anywhere.",
+  "description": "Personalized travel experiences, carefully selected packages and expert travel assistance from Chicago.",
+  "hero_image": "/images/hero.jpg",
+  "ai_name": "AI Travel Assistant",
+  "contact": { "email": "hello@chicagotravel.example", "phone": "+1 (312) 555-0123" },
+  "social": { "instagram": "#", "facebook": "#" }
+}

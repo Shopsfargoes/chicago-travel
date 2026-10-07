@@ -1,0 +1,4 @@
+{
+  "functions": { "api/**/*.js": { "includeFiles": "{data,config}/**" } },
+  "cleanUrls": true
+}

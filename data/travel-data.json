@@ -1,0 +1,33 @@
+{
+  "_note": "DEMO DATA. Replace per client. Dates are ISO. Prices are USD.",
+  "agency": { "name": "Chicago Travel Co.", "tagline": "From Chicago to Anywhere.", "location": "Chicago, USA" },
+  "destinations": [
+    { "id": "nairobi", "name": "Nairobi", "country": "Kenya", "blurb": "Safari gateway with city culture and national park day trips.", "image": "/images/nairobi.jpg", "from_price": 2499, "climate": "warm" },
+    { "id": "cape-town", "name": "Cape Town", "country": "South Africa", "blurb": "Mountains, coastline and wine country in one city.", "image": "/images/cape-town.jpg", "from_price": 2899, "climate": "warm" },
+    { "id": "dubai", "name": "Dubai", "country": "UAE", "blurb": "Skyline, desert and beach in a single trip.", "image": "/images/dubai.jpg", "from_price": null, "climate": "warm" },
+    { "id": "paris", "name": "Paris", "country": "France", "blurb": "Museums, cafes and long walks along the Seine.", "image": "/images/paris.jpg", "from_price": null, "climate": "cool" },
+    { "id": "london", "name": "London", "country": "United Kingdom", "blurb": "Theatre, markets and history on every corner.", "image": "/images/london.jpg", "from_price": null, "climate": "cool" },
+    { "id": "zanzibar", "name": "Zanzibar", "country": "Tanzania", "blurb": "White-sand beaches and Stone Town's old streets.", "image": "/images/zanzibar.jpg", "from_price": null, "climate": "warm" }
+  ],
+  "trips": [
+    {
+      "id": "christmas-escape", "name": "Christmas Escape", "destination_id": "nairobi",
+      "destination": "Nairobi, Kenya", "start_date": "2026-12-20", "end_date": "2026-12-27",
+      "starting_price": 2499, "price_basis": "per person", "availability": 7,
+      "image": "/images/nairobi.jpg", "tags": ["warm", "christmas", "couples", "family", "under-3000"],
+      "includes": ["Return flight", "Hotel accommodation", "Airport transfers", "Breakfast", "City tour"]
+    },
+    {
+      "id": "new-year-south-africa", "name": "New Year in South Africa", "destination_id": "cape-town",
+      "destination": "Cape Town, South Africa", "start_date": "2026-12-29", "end_date": "2027-01-05",
+      "starting_price": 2899, "price_basis": "per person", "availability": 5,
+      "image": "/images/cape-town.jpg", "tags": ["warm", "new-year", "couples", "under-3000"],
+      "includes": ["Return flight", "Hotel accommodation", "Airport transfers", "Breakfast"]
+    }
+  ],
+  "faqs": [
+    { "q": "How do I book?", "a": "Send an enquiry through the assistant or WhatsApp and our travel team will follow up to confirm details and availability." }
+  ],
+  "policies": [],
+  "contact": { "email": "hello@chicagotravel.example", "phone": "+1 (312) 555-0123" }
+}

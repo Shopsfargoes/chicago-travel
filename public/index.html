@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chicago Travel Co. | From Chicago to Anywhere</title>
+  <meta name="description" content="Upcoming holiday trips, curated packages and an AI travel assistant that helps you plan. Chicago Travel Co.">
+  <meta property="og:title" content="Chicago Travel Co. | From Chicago to Anywhere">
+  <meta property="og:description" content="Upcoming holiday trips and an AI travel assistant that helps you plan your next adventure.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/images/hero.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="nav" id="top">
+    <a class="logo" href="#top" data-brand="name">Chicago Travel Co.</a>
+    <nav aria-label="Main" class="nav-links" id="navLinks">
+      <a href="#trips">Trips</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#why">Why Us</a>
+      <a href="#assistant" data-open-chat>AI Travel Assistant</a>
+    </nav>
+    <button class="btn btn-primary nav-cta" data-open-chat>Plan My Trip</button>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <h1>From Chicago to Anywhere.</h1>
+        <p class="lead">Discover your next adventure with personalized travel experiences, carefully selected packages, and expert travel assistance.</p>
+        <div class="row">
+          <button class="btn btn-primary btn-lg" data-open-chat>Plan My Trip with AI</button>
+          <a class="btn btn-ghost btn-lg" href="#trips">Explore Trips</a>
+        </div>
+        <button class="hero-prompt" data-open-chat>
+          <strong>Not sure where to go?</strong>
+          <span>Tell our AI Travel Assistant what you're looking for</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section" id="trips" aria-labelledby="tripsH">
+      <h2 id="tripsH">Where are you going next?</h2>
+      <p class="sub">Explore our upcoming trips and find an experience that fits your plans.</p>
+      <div class="grid trips" id="tripGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="section soft" id="destinations" aria-labelledby="destH">
+      <h2 id="destH">Destinations</h2>
+      <p class="sub">Places we know well, with more added all the time.</p>
+      <div class="grid dests" id="destGrid"></div>
+    </section>
+
+    <section class="section" id="why" aria-labelledby="whyH">
+      <h2 id="whyH">Travel should feel exciting, not complicated.</h2>
+      <div class="grid why">
+        <article><h3>Curated Experiences</h3><p>Travel experiences selected around real destinations and activities.</p></article>
+        <article><h3>Personal Assistance</h3><p>Real travel support when visitors need it.</p></article>
+        <article><h3>Flexible Packages</h3><p>Options designed around different budgets and preferences.</p></article>
+        <article><h3>AI Trip Planning</h3><p>Get recommendations based on destination, dates, budget and preferences.</p></article>
+      </div>
+    </section>
+
+    <section class="section dark" id="assistant" aria-labelledby="aiH">
+      <div class="ai-split">
+        <div>
+          <h2 id="aiH">Not sure where to go? Just tell us what you're looking for.</h2>
+          <p class="sub">Our AI Travel Assistant helps you discover suitable trips based on your destination, dates, budget and travel preferences.</p>
+          <button class="btn btn-primary btn-lg" data-open-chat>Start Planning</button>
+        </div>
+        <div class="demo" aria-hidden="true">
+          <p class="bubble you">I want somewhere warm for New Year. I'm travelling with my wife and our budget is around $3,000.</p>
+          <p class="bubble bot">Cape Town could be a great fit. We currently have a New Year in South Africa trip from December 29 to January 5, with packages starting from $2,899.</p>
+          <p class="bubble bot">Would you like me to show you what's included?</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final" aria-labelledby="ctaH">
+      <h2 id="ctaH">Your next adventure is closer than you think.</h2>
+      <p class="sub">Tell us where you want to go, and we'll help you figure out the rest.</p>
+      <div class="row center">
+        <button class="btn btn-primary btn-lg" data-open-chat>Plan My Trip with AI</button>
+        <a class="btn btn-ghost-dark btn-lg" data-wa href="#" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="foot-grid">
+      <div><strong class="logo" data-brand="name">Chicago Travel Co.</strong><p data-brand="description"></p></div>
+      <nav aria-label="Footer"><a href="#trips">Trips</a><a href="#destinations">Destinations</a><a href="#why">Why Us</a></nav>
+      <div id="footDests"></div>
+      <div id="footContact"></div>
+    </div>
+    <p class="legal"><a href="/privacy.html">Privacy Policy</a> <a href="/terms.html">Terms</a> <span>&copy; <span id="yr"></span> <span data-brand="name"></span></span></p>
+  </footer>
+
+  <button class="fab" id="fab" aria-label="Plan your trip with AI" aria-controls="chat">
+    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M9 11h6M9 14h3"/></svg>
+    <span class="tip">Plan your trip with AI</span>
+  </button>
+
+  <section class="chat" id="chat" role="dialog" aria-label="AI Travel Assistant" aria-modal="false" hidden>
+    <header><div><strong>AI Travel Assistant</strong><span class="status">Online</span></div><button id="chatClose" aria-label="Close chat">&times;</button></header>
+    <div class="msgs" id="msgs" aria-live="polite"></div>
+    <div class="quick" id="quick"></div>
+    <form id="chatForm" autocomplete="off">
+      <input id="chatInput" type="text" maxlength="600" placeholder="Tell me where you'd like to go..." aria-label="Your message">
+      <button class="btn btn-primary" type="submit">Send</button>
+    </form>
+    <p class="note">AI assistant. Details are confirmed by our travel team.</p>
+  </section>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
