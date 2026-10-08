@@ -1,3 +1,5 @@
+import nodemailer from 'nodemailer';
+
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const clip = (v, n) => String(v ?? '').trim().slice(0, n);
 
@@ -29,16 +31,26 @@ export async function sendLead(lead) {
     `Intent:\n${lead.intent}`, `Message:\n${lead.message || '-'}`
   ].join('\n\n');
 
-  const { RESEND_API_KEY, AGENCY_EMAIL, RESEND_FROM } = process.env;
-  if (!RESEND_API_KEY || !AGENCY_EMAIL) {
+  const { GMAIL_USER, GMAIL_APP_PASSWORD, AGENCY_EMAIL } = process.env;
+  if (!GMAIL_USER || !GMAIL_APP_PASSWORD) {
     console.log('[lead:not-emailed]\n' + body); // demo fallback: visible in Vercel logs
     return { delivered: false };
   }
-  const r = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${RESEND_API_KEY}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ from: RESEND_FROM || 'onboarding@resend.dev', to: [AGENCY_EMAIL], reply_to: lead.email, subject: `New travel lead: ${lead.name}`, text: body })
-  });
-  if (!r.ok) { console.error('[lead:email-failed]', r.status, '\n' + body); throw new Error('email failed'); }
-  return { delivered: true };
+  try {
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com', port: 465, secure: true,
+      auth: { user: GMAIL_USER, pass: GMAIL_APP_PASSWORD }
+    });
+    await transporter.sendMail({
+      from: `"Travel Leads" <${GMAIL_USER}>`,
+      to: AGENCY_EMAIL || GMAIL_USER,
+      replyTo: lead.email,
+      subject: `New travel lead: ${lead.name}`,
+      text: body
+    });
+    return { delivered: true };
+  } catch (e) {
+    console.error('[lead:email-failed]', e.message, '\n' + body);
+    throw new Error('email failed');
+  }
 }

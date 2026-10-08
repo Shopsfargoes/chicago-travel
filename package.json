@@ -4,5 +4,6 @@
   "private": true,
   "type": "module",
   "scripts": { "dev": "vercel dev" },
-  "engines": { "node": ">=18" }
+  "engines": { "node": ">=18" },
+  "dependencies": { "nodemailer": "^6.9.0" }
 }
