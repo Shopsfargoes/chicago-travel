@@ -9,9 +9,10 @@
   <meta property="og:description" content="Upcoming holiday trips and an AI travel assistant that helps you plan your next adventure.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="/images/hero.jpg">
+  <script>document.documentElement.classList.add('js')</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -29,50 +30,57 @@
 
   <main>
     <section class="hero" id="hero">
-      <div class="hero-inner">
-        <h1>From Chicago to Anywhere.</h1>
-        <p class="lead">Discover your next adventure with personalized travel experiences, carefully selected packages, and expert travel assistance.</p>
-        <div class="row">
-          <button class="btn btn-primary btn-lg" data-open-chat>Plan My Trip with AI</button>
-          <a class="btn btn-ghost btn-lg" href="#trips">Explore Trips</a>
+      <button class="pill" data-open-chat><span class="dot"></span><span>Not sure where to go? <b>Tell our AI Travel Assistant what you're looking for</b> &rarr;</span></button>
+      <h1><span class="grad-soft">From Chicago to</span><br><span class="grad">Anywhere.</span></h1>
+      <p class="lead">Discover your next adventure with personalized travel experiences, carefully selected packages, and expert travel assistance.</p>
+      <div class="row center">
+        <button class="btn btn-primary btn-lg" data-open-chat>Plan My Trip with AI</button>
+        <a class="btn btn-outline btn-lg" href="#trips">Explore Trips</a>
+      </div>
+      <div class="preview" aria-hidden="true">
+        <div class="win">
+          <div class="win-bar"><i></i><i></i><i></i><b>AI Travel Assistant</b><em>Online</em></div>
+          <div class="win-body">
+            <div class="win-chat">
+              <p class="bubble you">I want somewhere warm for New Year. We're two, budget around $3,000.</p>
+              <p class="bubble bot">Cape Town could be a great fit. New Year in South Africa runs December 29 to January 5, from $2,899 per person.</p>
+            </div>
+            <div class="win-card"><div class="ph"></div><div class="t"><strong>New Year in South Africa</strong><span>Cape Town &middot; Dec 29 &ndash; Jan 5</span><b>From $2,899</b></div></div>
+          </div>
         </div>
-        <button class="hero-prompt" data-open-chat>
-          <strong>Not sure where to go?</strong>
-          <span>Tell our AI Travel Assistant what you're looking for</span>
-        </button>
       </div>
     </section>
 
     <section class="section" id="trips" aria-labelledby="tripsH">
-      <h2 id="tripsH">Where are you going next?</h2>
-      <p class="sub">Explore our upcoming trips and find an experience that fits your plans.</p>
-      <div class="grid trips" id="tripGrid" aria-live="polite"></div>
+      <div class="head reveal"><h2 id="tripsH">Where are you going next?</h2><p class="sub">Explore our upcoming trips and find an experience that fits your plans.</p></div>
+      <div class="grid3" id="tripGrid" aria-live="polite"></div>
     </section>
 
-    <section class="section soft" id="destinations" aria-labelledby="destH">
-      <h2 id="destH">Destinations</h2>
-      <p class="sub">Places we know well, with more added all the time.</p>
-      <div class="grid dests" id="destGrid"></div>
-    </section>
-
-    <section class="section" id="why" aria-labelledby="whyH">
-      <h2 id="whyH">Travel should feel exciting, not complicated.</h2>
-      <div class="grid why">
-        <article><h3>Curated Experiences</h3><p>Travel experiences selected around real destinations and activities.</p></article>
-        <article><h3>Personal Assistance</h3><p>Real travel support when visitors need it.</p></article>
-        <article><h3>Flexible Packages</h3><p>Options designed around different budgets and preferences.</p></article>
-        <article><h3>AI Trip Planning</h3><p>Get recommendations based on destination, dates, budget and preferences.</p></article>
+    <section class="band" id="destinations" aria-labelledby="destH">
+      <div class="section">
+        <div class="head reveal"><h2 id="destH">Destinations</h2><p class="sub">Places we know well, with more added all the time.</p></div>
+        <div class="grid3" id="destGrid"></div>
       </div>
     </section>
 
-    <section class="section dark" id="assistant" aria-labelledby="aiH">
-      <div class="ai-split">
-        <div>
+    <section class="section" id="why" aria-labelledby="whyH">
+      <div class="head reveal"><h2 id="whyH">Travel should feel exciting, not complicated.</h2></div>
+      <div class="grid4">
+        <article class="feat reveal"><span class="num">01</span><h3>Curated Experiences</h3><p>Travel experiences selected around real destinations and activities.</p></article>
+        <article class="feat reveal"><span class="num">02</span><h3>Personal Assistance</h3><p>Real travel support when visitors need it.</p></article>
+        <article class="feat reveal"><span class="num">03</span><h3>Flexible Packages</h3><p>Options designed around different budgets and preferences.</p></article>
+        <article class="feat reveal"><span class="num">04</span><h3>AI Trip Planning</h3><p>Get recommendations based on destination, dates, budget and preferences.</p></article>
+      </div>
+    </section>
+
+    <section class="band ai" id="assistant" aria-labelledby="aiH">
+      <div class="section ai-split">
+        <div class="reveal">
           <h2 id="aiH">Not sure where to go? Just tell us what you're looking for.</h2>
           <p class="sub">Our AI Travel Assistant helps you discover suitable trips based on your destination, dates, budget and travel preferences.</p>
           <button class="btn btn-primary btn-lg" data-open-chat>Start Planning</button>
         </div>
-        <div class="demo" aria-hidden="true">
+        <div class="demo reveal" aria-hidden="true">
           <p class="bubble you">I want somewhere warm for New Year. I'm travelling with my wife and our budget is around $3,000.</p>
           <p class="bubble bot">Cape Town could be a great fit. We currently have a New Year in South Africa trip from December 29 to January 5, with packages starting from $2,899.</p>
           <p class="bubble bot">Would you like me to show you what's included?</p>
@@ -80,24 +88,40 @@
       </div>
     </section>
 
-    <section class="section final" aria-labelledby="ctaH">
-      <h2 id="ctaH">Your next adventure is closer than you think.</h2>
-      <p class="sub">Tell us where you want to go, and we'll help you figure out the rest.</p>
-      <div class="row center">
-        <button class="btn btn-primary btn-lg" data-open-chat>Plan My Trip with AI</button>
-        <a class="btn btn-ghost-dark btn-lg" data-wa href="#" target="_blank" rel="noopener">WhatsApp Us</a>
+    <section class="cta" aria-labelledby="ctaH">
+      <div class="cta-in reveal">
+        <h2 id="ctaH"><span class="grad">Your next adventure</span> <span class="grad-soft">is closer than you think.</span></h2>
+        <p>Tell us where you want to go, and we'll help you figure out the rest.</p>
+        <div class="row center">
+          <button class="btn btn-primary btn-lg" data-open-chat>Plan My Trip with AI</button>
+          <a class="btn btn-outline btn-lg" data-wa href="#" target="_blank" rel="noopener">WhatsApp Us</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="foot-grid">
-      <div><strong class="logo" data-brand="name">Chicago Travel Co.</strong><p data-brand="description"></p></div>
-      <nav aria-label="Footer"><a href="#trips">Trips</a><a href="#destinations">Destinations</a><a href="#why">Why Us</a></nav>
-      <div id="footDests"></div>
-      <div id="footContact"></div>
+    <div class="wrap">
+      <div class="panel reveal">
+        <div><strong>Prefer to talk to a person?</strong><p>Our travel team is happy to help you plan your trip.</p></div>
+        <div class="row"><a class="btn btn-primary" data-wa href="#" target="_blank" rel="noopener">WhatsApp Us</a><a class="btn btn-outline" id="panelMail" href="#">Email Us</a></div>
+      </div>
+
+      <div class="foot-grid">
+        <div class="f-brand"><a class="logo" href="#top" data-brand="name">Chicago Travel Co.</a><p data-brand="description"></p></div>
+        <nav class="f-col" aria-label="Explore"><h4>Explore</h4><a href="#trips">Trips</a><a href="#destinations">Destinations</a><a href="#why">Why Us</a><a href="#assistant" data-open-chat>AI Travel Assistant</a></nav>
+        <div class="f-col" id="footDests"></div>
+        <div class="f-col" id="footContact"></div>
+      </div>
+
+      <div class="wordmark" id="wordmark" aria-hidden="true"></div>
+
+      <div class="legal">
+        <p>&copy; <span id="yr"></span> <span data-brand="name"></span></p>
+        <a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms</a>
+        <div class="social" id="social"></div>
+      </div>
     </div>
-    <p class="legal"><a href="/privacy.html">Privacy Policy</a> <a href="/terms.html">Terms</a> <span>&copy; <span id="yr"></span> <span data-brand="name"></span></span></p>
   </footer>
 
   <button class="fab" id="fab" aria-label="Plan your trip with AI" aria-controls="chat">
